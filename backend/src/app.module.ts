@@ -1,7 +1,7 @@
 /* First party importations */
 import { Module } from "@nestjs/common";
 /* Second party importations */
-import { dbConfiguration } from "../configurations/db.config";
+import { dbConfiguration } from "./db.config";
 /* Third party importations */
 
 @Module({
