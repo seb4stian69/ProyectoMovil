@@ -9,49 +9,90 @@ La base de datos "Artesanías" es un sistema de gestión de información diseña
 
 ## Tablas Principales
 
-### 1. Usuarios
-- Almacena información sobre los usuarios registrados en el sistema, como clientes, artesanos y administradores.
-- Campos clave: `_id` y `tipo_id`.
-
-### 2. Roles
-- Define los roles de usuario (Cliente, Artesano, Admin) y asigna a los usuarios un rol específico.
-- Relación con la tabla Usuarios mediante `_id` y `tipo_id`.
-
-### 3. Categorias
-- Almacena las categorías de productos disponibles en la tienda de artesanías.
-
-### 4. Productos
-- Contiene información detallada sobre los productos disponibles, incluyendo precio, stock, descripción, y más.
-- Relación con la tabla Categorias mediante `Categorias__id`.
-
-### 5. Pedidos
-- Registra los pedidos realizados por los clientes, con detalles sobre su estado y fecha de pedido.
-- Relación con la tabla Usuarios mediante `_id` y `tipo_id`.
-
-### 6. MetodoPagoCompra
-- Almacena los métodos de pago disponibles para las compras.
-
-### 7. Facturas
-- Registra las facturas generadas a partir de los pedidos realizados por los clientes.
-- Relación con las tablas Usuarios y MetodoPagoCompra.
-
-### 8. DetallesFactura
-- Almacena información detallada sobre los productos incluidos en cada factura, incluyendo cantidad, precio y subtotal.
-- Relación con las tablas Facturas y Productos.
-
-### 9. PedidosEnLinea
-- Asocia productos a pedidos en línea, permitiendo un seguimiento detallado de los productos incluidos en cada pedido.
-- Relación con las tablas Pedidos y Productos.
-
-### 10. Credenciales
-- Almacena las credenciales de acceso de los usuarios al sistema.
-
-### 11. VideosArtesanos
-- Registra videos relacionados con los artesanos y sus productos.
-- Relación con la tabla Usuarios.
-
-### 12. IngresosLogs
-- Registra registros de ingresos de usuarios al sistema, incluyendo detalles y fecha.
+<table>
+  <thead>
+    <tr>
+      <th>Tabla</th>
+      <th>Descripción</th>
+      <th>Campos Clave</th>
+      <th>Relaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Usuarios</td>
+      <td>Almacena información sobre los usuarios registrados en el sistema, como clientes, artesanos y administradores.</td>
+      <td>_id y tipo_id</td>
+      <td>Relación con la tabla Roles mediante _id y tipo_id.</td>
+    </tr>
+    <tr>
+      <td>Roles</td>
+      <td>Define los roles de usuario (Cliente, Artesano, Admin) y asigna a los usuarios un rol específico.</td>
+      <td>_id</td>
+      <td>Relación con la tabla Usuarios mediante _id y tipo_id.</td>
+    </tr>
+    <tr>
+      <td>Categorias</td>
+      <td>Almacena las categorías de productos disponibles en la tienda de artesanías.</td>
+      <td>_id</td>
+      <td>Relación con la tabla Productos mediante Categorias__id.</td>
+    </tr>
+    <tr>
+      <td>Productos</td>
+      <td>Contiene información detallada sobre los productos disponibles, incluyendo precio, stock, descripción, y más.</td>
+      <td>_id</td>
+      <td>Relación con la tabla Categorias mediante Categorias__id.</td>
+    </tr>
+    <tr>
+      <td>Pedidos</td>
+      <td>Registra los pedidos realizados por los clientes, con detalles sobre su estado y fecha de pedido.</td>
+      <td>_id y tipo_id</td>
+      <td>Relación con la tabla Usuarios mediante _id y tipo_id.</td>
+    </tr>
+    <tr>
+      <td>MetodoPagoCompra</td>
+      <td>Almacena los métodos de pago disponibles para las compras.</td>
+      <td>_id</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Facturas</td>
+      <td>Registra las facturas generadas a partir de los pedidos realizados por los clientes.</td>
+      <td>_id</td>
+      <td>Relación con las tablas Usuarios y MetodoPagoCompra.</td>
+    </tr>
+    <tr>
+      <td>DetallesFactura</td>
+      <td>Almacena información detallada sobre los productos incluidos en cada factura, incluyendo cantidad, precio y subtotal.</td>
+      <td>_id</td>
+      <td>Relación con las tablas Facturas y Productos.</td>
+    </tr>
+    <tr>
+      <td>PedidosEnLinea</td>
+      <td>Asocia productos a pedidos en línea, permitiendo un seguimiento detallado de los productos incluidos en cada pedido.</td>
+      <td>_id</td>
+      <td>Relación con las tablas Pedidos y Productos.</td>
+    </tr>
+    <tr>
+      <td>Credenciales</td>
+      <td>Almacena las credenciales de acceso de los usuarios al sistema.</td>
+      <td>_id</td>
+      <td>Relación con la tabla Usuarios.</td>
+    </tr>
+    <tr>
+      <td>VideosArtesanos</td>
+      <td>Registra videos relacionados con los artesanos y sus productos.</td>
+      <td>_id</td>
+      <td>Relación con la tabla Usuarios.</td>
+    </tr>
+    <tr>
+      <td>IngresosLogs</td>
+      <td>Registra registros de ingresos de usuarios al sistema, incluyendo detalles y fecha.</td>
+      <td>_id</td>
+      <td>Relación con la tabla Usuarios.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Configuración
 Para utilizar esta base de datos, se deben seguir los siguientes pasos:
