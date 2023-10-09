@@ -1,5 +1,9 @@
 # Base de Datos Artesanías - README
 
+<br>
+
+<img src="ImagenModelo.png">
+
 ## Descripción
 La base de datos "Artesanías" es un sistema de gestión de información diseñado para administrar datos relacionados con una tienda de artesanías en línea. Esta base de datos se ha diseñado con la intención de ofrecer funcionalidades para la gestión de usuarios, productos, pedidos, facturación y más. A continuación, se describen las principales tablas y su estructura.
 
