@@ -44,12 +44,6 @@ La base de datos "Artesanías" es un sistema de gestión de información diseña
       <td>Relación con la tabla Categorias mediante Categorias__id.</td>
     </tr>
     <tr>
-      <td>Pedidos</td>
-      <td>Registra los pedidos realizados por los clientes, con detalles sobre su estado y fecha de pedido.</td>
-      <td>_id y tipo_id</td>
-      <td>Relación con la tabla Usuarios mediante _id y tipo_id.</td>
-    </tr>
-    <tr>
       <td>MetodoPagoCompra</td>
       <td>Almacena los métodos de pago disponibles para las compras.</td>
       <td>_id</td>
@@ -66,12 +60,6 @@ La base de datos "Artesanías" es un sistema de gestión de información diseña
       <td>Almacena información detallada sobre los productos incluidos en cada factura, incluyendo cantidad, precio y subtotal.</td>
       <td>_id</td>
       <td>Relación con las tablas Facturas y Productos.</td>
-    </tr>
-    <tr>
-      <td>PedidosEnLinea</td>
-      <td>Asocia productos a pedidos en línea, permitiendo un seguimiento detallado de los productos incluidos en cada pedido.</td>
-      <td>_id</td>
-      <td>Relación con las tablas Pedidos y Productos.</td>
     </tr>
     <tr>
       <td>Credenciales</td>
