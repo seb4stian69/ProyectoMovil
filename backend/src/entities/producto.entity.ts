@@ -3,7 +3,6 @@
 import { Entity, PrimaryColumn, Column, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 /* Third party importations */
 import { DetalleFactura } from './detalle-factura.entity';
-import { PedidoEnLinea } from './pedido-en-linea.entity';
 import { Categoria } from './categoria.entity';
 
 
@@ -52,10 +51,5 @@ export class Producto {
 
   @OneToMany(() => DetalleFactura, (detalleFactura) => detalleFactura.producto)
   detallesFactura: DetalleFactura[];
-
-  /* ---------------------------------------- Relacion con 'PedidoEnLinea' ---------------------------------------- */
-
-  @OneToMany(() => PedidoEnLinea, (pedidoEnLinea) => pedidoEnLinea.producto)
-  pedidosEnLinea: PedidoEnLinea[];
 
 }

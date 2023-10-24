@@ -3,16 +3,13 @@
 import { Entity, PrimaryColumn, Column, OneToMany, OneToOne } from 'typeorm';
 /* Third party importations */
 import { Role } from './role.entity';
-import { Pedido } from './pedido.entity';
 import { Factura } from './factura.entity';
 import { VideoArtesano } from './video-artesano.entity';
 import { IngresoLog } from './ingreso-log.entity';
 import { Credenciales } from './credenciales.entity';
 
-
 @Entity('Usuarios')
 export class UserEntity {
-
   /* ---------------------------------------- Columnas de la tabla ---------------------------------------- */
 
   @PrimaryColumn({ length: 15 })
@@ -49,11 +46,6 @@ export class UserEntity {
 
   @OneToOne(() => Role, (rol) => rol.usuario)
   roles: Role;
-  
-  /* ---------------------------------------- Relacion con 'pedidos' ---------------------------------------- */
-
-  @OneToMany(() => Pedido, (pedido) => pedido.usuario)
-  pedidos: Pedido[];
 
   /* ---------------------------------------- Relacion con 'facturas' ---------------------------------------- */
 
@@ -74,5 +66,4 @@ export class UserEntity {
 
   @OneToOne(() => Credenciales, (credencial) => credencial.usuarioR)
   credencial: Credenciales;
-  
 }

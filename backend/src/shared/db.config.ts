@@ -8,12 +8,11 @@ import { DetalleFactura } from 'src/entities/detalle-factura.entity';
 import { Factura } from 'src/entities/factura.entity';
 import { IngresoLog } from 'src/entities/ingreso-log.entity';
 import { MetodoPagoCompra } from 'src/entities/metodo-pago-compra.entity';
-import { PedidoEnLinea } from 'src/entities/pedido-en-linea.entity';
-import { Pedido } from 'src/entities/pedido.entity';
 import { Producto } from 'src/entities/producto.entity';
 import { Role } from 'src/entities/role.entity';
 import { UserEntity } from 'src/entities/usuario.entity';
 import { VideoArtesano } from 'src/entities/video-artesano.entity';
+
 
 export const dbConfiguration = TypeOrmModule.forRoot({
     type: 'mysql',
@@ -21,13 +20,13 @@ export const dbConfiguration = TypeOrmModule.forRoot({
     port: 3306,
     username: 'root',
     password: 'root',
-    database: 'Artesanias',
+    database: 'artesanias',
     entities: [
-        UserEntity, Role, Pedido,
-        Factura, DetalleFactura, VideoArtesano,
-        IngresoLog, Credenciales, MetodoPagoCompra,
-        Categoria, PedidoEnLinea, Producto
+        UserEntity, Role, Factura,
+        DetalleFactura, VideoArtesano, IngresoLog,
+        Credenciales, MetodoPagoCompra, Categoria,
+        Producto
     ],
-    synchronize: true,
+    synchronize: false,
 })
 

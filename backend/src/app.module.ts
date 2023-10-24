@@ -12,8 +12,6 @@ import { DetalleFactura } from "./entities/detalle-factura.entity";
 import { Factura } from "./entities/factura.entity";
 import { IngresoLog } from "./entities/ingreso-log.entity";
 import { MetodoPagoCompra } from "./entities/metodo-pago-compra.entity";
-import { Pedido } from "./entities/pedido.entity";
-import { PedidoEnLinea } from "./entities/pedido-en-linea.entity";
 import { Producto } from "./entities/producto.entity";
 import { VideoArtesano } from "./entities/video-artesano.entity";
 import { UsersService } from "./service/user.service";
@@ -23,7 +21,6 @@ import { RolesController } from "./controller/role.controller";
 import { CategoriasController } from "./controller/categoria.controller";
 import { CategoriasService } from "./service/categoria.service";
 import { ProductosController } from "./controller/product.controller";
-import { ProductosService } from "./service/product.service";
 import { MetodoPagoController } from "./controller/metodopago.controller";
 import { MetodoPagoService } from "./service/metodopago.service";
 import { CredencialesController } from "./controller/credenciales.controller";
@@ -32,14 +29,11 @@ import { IngresoLogController } from "./controller/ingresoslog.controller";
 import { IngresosLogService } from "./service/ingresoslog.service";
 import { VideoArtesanoController } from "./controller/videoartesano.controller";
 import { VideoArtesanosService } from "./service/videoartesano.service";
-import { PedidosController } from "./controller/pedido.controller";
-import { PedidoService } from "./service/pedido.service";
 import { FacturasService } from "./service/factura.service";
 import { FacturaController } from "./controller/factura.controller";
-import { PedidoEnLineasService } from "./service/pedidosenlinea.service";
-import { PedidosEnLineaController } from "./controller/pedidoenlinea.controller";
 import { DetalleFacturasController } from "./controller/detallefactura.controller";
 import { DetalleFacturasService } from "./service/detallefactura.service";
+import { ProductosService } from "./service/producto.service";
 
 
 @Module({
@@ -51,8 +45,8 @@ import { DetalleFacturasService } from "./service/detallefactura.service";
     TypeOrmModule.forFeature([
       UserEntity, Role, Categoria,
       Credenciales, DetalleFactura, Factura,
-      IngresoLog, MetodoPagoCompra, Pedido,
-      PedidoEnLinea, Producto, VideoArtesano,
+      IngresoLog, MetodoPagoCompra, Producto,
+      VideoArtesano,
     ])
 
   ],
@@ -60,15 +54,15 @@ import { DetalleFacturasService } from "./service/detallefactura.service";
   controllers: [
     UsersController, RolesController, CategoriasController,
     ProductosController, MetodoPagoController, CredencialesController,
-    IngresoLogController, VideoArtesanoController, PedidosController,
-    FacturaController, PedidosEnLineaController, DetalleFacturasController
+    IngresoLogController, VideoArtesanoController, FacturaController,
+    DetalleFacturasController
   ],
   
   providers: [
     UsersService, RolesService, CategoriasService,
-    ProductosService, MetodoPagoService, CredencialesService,
-    IngresosLogService, VideoArtesanosService, PedidoService,
-    FacturasService, PedidoEnLineasService, DetalleFacturasService
+    MetodoPagoService, CredencialesService, IngresosLogService,
+    VideoArtesanosService, ProductosService, FacturasService,
+    DetalleFacturasService
   ],
 
 })
