@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { CarritoCompras } from 'src/entities/carritocompras.entity';
-import { CarritoComprasService } from 'src/service/carritocompras.service';
+import { CarritoComprasService } from 'src/service/admin/carritocompras.service';
 
 @Controller('carritocompras')
 @ApiTags('CarritoCompras') // Etiqueta para el grupo de rutas

@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { Producto } from 'src/entities/producto.entity';
-import { ProductosService } from 'src/service/producto.service';  
+import { ProductosService } from 'src/service/admin/producto.service';  
 import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('productos')

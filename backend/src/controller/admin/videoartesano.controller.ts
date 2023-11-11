@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { VideoArtesano } from 'src/entities/video-artesano.entity';
-import { VideoArtesanosService } from 'src/service/videoartesano.service';
+import { VideoArtesanosService } from 'src/service/admin/videoartesano.service';
 import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('videoartesano')

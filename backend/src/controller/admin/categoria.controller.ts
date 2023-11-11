@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { Categoria } from 'src/entities/categoria.entity';
-import { CategoriasService } from 'src/service/categoria.service';
+import { CategoriasService } from 'src/service/admin/categoria.service';
 import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('categorias')

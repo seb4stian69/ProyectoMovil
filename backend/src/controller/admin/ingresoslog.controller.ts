@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { IngresoLog } from 'src/entities/ingreso-log.entity';
-import { IngresosLogService } from 'src/service/ingresoslog.service';
+import { IngresosLogService } from 'src/service/admin/ingresoslog.service';
 import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('ingresoslog')

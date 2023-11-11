@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { Factura } from 'src/entities/factura.entity';
-import { FacturasService } from 'src/service/factura.service';
+import { FacturasService } from 'src/service/admin/factura.service';
 import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('facturas')
