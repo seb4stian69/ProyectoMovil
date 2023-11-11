@@ -204,6 +204,29 @@ CREATE TABLE IF NOT EXISTS `Artesanias`.`IngresosLogs` (
     ON UPDATE NO ACTION)
 ;
 
+-- -----------------------------------------------------
+-- Table `Artesanias`.`CarritoCompras`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Artesanias`.`CarritoCompras` (
+  `_id` INT NOT NULL,
+  `Usuarios__id` VARCHAR(15) CHARACTER SET 'big5' NOT NULL,
+  `Usuarios_tipo_id` ENUM('CC', 'CE', 'TI', 'PAS') NOT NULL,
+  `Productos__id` VARCHAR(100) NOT NULL,
+  `cantidad` INT NOT NULL,
+  PRIMARY KEY (`_id`),
+  INDEX `fk_CarritoCompras_Usuarios1_idx` (`Usuarios__id` ASC, `Usuarios_tipo_id` ASC) VISIBLE,
+  INDEX `fk_CarritoCompras_Productos1_idx` (`Productos__id` ASC) VISIBLE,
+  CONSTRAINT `fk_CarritoCompras_Usuarios1`
+    FOREIGN KEY (`Usuarios__id` , `Usuarios_tipo_id`)
+    REFERENCES `Artesanias`.`Usuarios` (`_id` , `tipo_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CarritoCompras_Productos1`
+    FOREIGN KEY (`Productos__id`)
+    REFERENCES `Artesanias`.`Productos` (`_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
