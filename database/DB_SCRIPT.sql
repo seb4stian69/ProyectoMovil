@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `Artesanias`.`DetallesFactura` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Artesanias`.`Credenciales` (
   `_id` VARCHAR(100) NOT NULL,
-  `usuario` VARCHAR(45) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL UNIQUE,
   `contrasena` VARCHAR(45) NOT NULL,
   `Usuarios__id` VARCHAR(15) CHARACTER SET 'big5' NOT NULL,
   `Usuarios_tipo_id` ENUM('CC', 'CE', 'TI', 'PAS') NOT NULL,
