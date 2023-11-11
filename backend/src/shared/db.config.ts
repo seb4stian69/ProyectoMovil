@@ -1,5 +1,6 @@
 /* First party importations */
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { CarritoCompras } from 'src/entities/carritocompras.entity';
 /* Second party importations */
 /* Third party importations */
 import { Categoria } from 'src/entities/categoria.entity';
@@ -20,12 +21,12 @@ export const dbConfiguration = TypeOrmModule.forRoot({
     port: 3306,
     username: 'root',
     password: 'root',
-    database: 'artesanias',
+    database: 'Artesanias',
     entities: [
         UserEntity, Role, Factura,
         DetalleFactura, VideoArtesano, IngresoLog,
         Credenciales, MetodoPagoCompra, Categoria,
-        Producto
+        Producto, CarritoCompras
     ],
     synchronize: false,
 })
