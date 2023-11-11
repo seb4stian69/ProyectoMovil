@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `Artesanias`.`IngresosLogs` (
 -- Table `Artesanias`.`CarritoCompras`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Artesanias`.`CarritoCompras` (
-  `_id` INT NOT NULL,
+  `_id` INT NOT NULL AUTO_INCREMENT,
   `Usuarios__id` VARCHAR(15) CHARACTER SET 'big5' NOT NULL,
   `Usuarios_tipo_id` ENUM('CC', 'CE', 'TI', 'PAS') NOT NULL,
   `Productos__id` VARCHAR(100) NOT NULL,
