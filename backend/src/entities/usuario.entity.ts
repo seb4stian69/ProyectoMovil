@@ -7,6 +7,7 @@ import { Factura } from './factura.entity';
 import { VideoArtesano } from './video-artesano.entity';
 import { IngresoLog } from './ingreso-log.entity';
 import { Credenciales } from './credenciales.entity';
+import { CarritoCompras } from './carritocompras.entity';
 
 @Entity('Usuarios')
 export class UserEntity {
@@ -66,4 +67,10 @@ export class UserEntity {
 
   @OneToOne(() => Credenciales, (credencial) => credencial.usuarioR)
   credencial: Credenciales;
+
+  /* ---------------------------------------- Relacion con 'CarritoCompras' ---------------------------------------- */
+
+  @OneToMany(() => CarritoCompras, (carritoCompras) => carritoCompras.usuario)
+  carritoCompras: CarritoCompras;
+
 }

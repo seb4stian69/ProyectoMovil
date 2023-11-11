@@ -4,6 +4,7 @@ import { Entity, PrimaryColumn, Column, ManyToOne, OneToMany, JoinColumn } from 
 /* Third party importations */
 import { DetalleFactura } from './detalle-factura.entity';
 import { Categoria } from './categoria.entity';
+import { CarritoCompras } from './carritocompras.entity';
 
 
 @Entity('Productos')
@@ -13,9 +14,6 @@ export class Producto {
 
   @PrimaryColumn({ type: 'varchar', length: 100 })
   _id: string;
-
-  @Column({ type: 'float' })
-  precio: number;
 
   @Column({ type: 'varchar', length: 45 })
   nombre: string;
@@ -51,5 +49,10 @@ export class Producto {
 
   @OneToMany(() => DetalleFactura, (detalleFactura) => detalleFactura.producto)
   detallesFactura: DetalleFactura[];
+
+    /* ---------------------------------------- Relacion con 'CarritoCompras' ---------------------------------------- */
+
+  @OneToMany(() => CarritoCompras, (carritoCompra) => carritoCompra.producto)
+  carritoCompra: CarritoCompras[];
 
 }
