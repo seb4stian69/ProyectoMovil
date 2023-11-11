@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { IngresoLog } from 'src/entities/ingreso-log.entity';
 import { IngresosLogService } from 'src/service/ingresoslog.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('ingresoslog')
 @ApiTags('IngresosLog') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class IngresoLogController {
   @ApiOperation({ summary: 'Crea un nuevo ingreso log' })
   @ApiResponse({ status: 201, description: 'Ingreso log creado con éxito' })
   create(@Body() user: IngresoLog): Promise<IngresoLog> {
+    user._id = generarID();
     return this.ingresosLogService.create(user);
   }
 

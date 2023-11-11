@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { MetodoPagoCompra } from 'src/entities/metodo-pago-compra.entity';
 import { MetodoPagoService } from 'src/service/metodopago.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('metodopago')
 @ApiTags('MetodoPago') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class MetodoPagoController {
   @ApiOperation({ summary: 'Crea un nuevo método de pago' })
   @ApiResponse({ status: 201, description: 'Método de pago creado con éxito' })
   create(@Body() user: MetodoPagoCompra): Promise<MetodoPagoCompra> {
+    user._id = generarID();
     return this.metodoPagoService.create(user);
   }
 

@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { Role } from 'src/entities/role.entity';
 import { RolesService } from 'src/service/role.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('roles')
 @ApiTags('Roles') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class RolesController {
   @ApiOperation({ summary: 'Crea un nuevo rol' })
   @ApiResponse({ status: 201, description: 'Rol creado con éxito' })
   create(@Body() user: Role): Promise<Role> {
+    user._id = generarID();
     return this.rolesService.create(user);
   }
 

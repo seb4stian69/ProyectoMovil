@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { DetalleFactura } from 'src/entities/detalle-factura.entity';
 import { DetalleFacturasService } from 'src/service/detallefactura.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('detallefactura')
 @ApiTags('DetalleFactura') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class DetalleFacturasController {
   @ApiOperation({ summary: 'Crea un nuevo detalle de factura' })
   @ApiResponse({ status: 201, description: 'Detalle de factura creado con éxito' })
   create(@Body() user: DetalleFactura): Promise<DetalleFactura> {
+    user._id = generarID();
     return this.detalleFacturaService.create(user);
   }
 

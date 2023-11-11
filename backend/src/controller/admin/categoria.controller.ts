@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { Categoria } from 'src/entities/categoria.entity';
 import { CategoriasService } from 'src/service/categoria.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('categorias')
 @ApiTags('Categorias') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class CategoriasController {
   @ApiOperation({ summary: 'Crea una nueva categoría' })
   @ApiResponse({ status: 201, description: 'Categoría creada con éxito' })
   create(@Body() user: Categoria): Promise<Categoria> {
+    user._id = generarID();
     return this.categoriaService.create(user);
   }
 

@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { Credenciales } from 'src/entities/credenciales.entity';
 import { CredencialesService } from 'src/service/credenciales.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('credenciales')
 @ApiTags('Credenciales') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class CredencialesController {
   @ApiOperation({ summary: 'Crea una nueva credencial' })
   @ApiResponse({ status: 201, description: 'Credencial creada con éxito' })
   create(@Body() user: Credenciales): Promise<Credenciales> {
+    user._id = generarID();
     return this.credencialesService.create(user);
   }
 

@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { UserEntity } from 'src/entities/usuario.entity';
 import { UsersService } from 'src/service/user.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('users')
 @ApiTags('Usuarios') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class UsersController {
   @ApiOperation({ summary: 'Crea un nuevo usuario' })
   @ApiResponse({ status: 201, description: 'Usuario creado con éxito' })
   create(@Body() user: UserEntity): Promise<UserEntity> {
+    user._id = generarID();
     return this.usersService.create(user);
   }
 

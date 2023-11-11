@@ -2,6 +2,7 @@ import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common'
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger'; // Importa las anotaciones de Swagger
 import { VideoArtesano } from 'src/entities/video-artesano.entity';
 import { VideoArtesanosService } from 'src/service/videoartesano.service';
+import { generarID } from 'src/shared/autogen.id-key';
 
 @Controller('videoartesano')
 @ApiTags('Videos Artesanos') // Etiqueta para el grupo de rutas
@@ -28,6 +29,7 @@ export class VideoArtesanoController {
   @ApiOperation({ summary: 'Crea un nuevo video artesano' })
   @ApiResponse({ status: 201, description: 'Video artesano creado con éxito' })
   create(@Body() user: VideoArtesano): Promise<VideoArtesano> {
+    user._id = generarID();
     return this.videoArtesanoService.create(user);
   }
 
