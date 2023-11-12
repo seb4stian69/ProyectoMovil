@@ -14,26 +14,38 @@ import { IngresoLog } from "./entities/ingreso-log.entity";
 import { MetodoPagoCompra } from "./entities/metodo-pago-compra.entity";
 import { Producto } from "./entities/producto.entity";
 import { VideoArtesano } from "./entities/video-artesano.entity";
-import { UsersService } from "./service/user.service";
-import { UsersController } from "./controller/user.controller";
-import { RolesService } from "./service/role.service";
-import { RolesController } from "./controller/role.controller";
-import { CategoriasController } from "./controller/categoria.controller";
-import { CategoriasService } from "./service/categoria.service";
-import { ProductosController } from "./controller/product.controller";
-import { MetodoPagoController } from "./controller/metodopago.controller";
-import { MetodoPagoService } from "./service/metodopago.service";
-import { CredencialesController } from "./controller/credenciales.controller";
-import { CredencialesService } from "./service/credenciales.service";
-import { IngresoLogController } from "./controller/ingresoslog.controller";
-import { IngresosLogService } from "./service/ingresoslog.service";
-import { VideoArtesanoController } from "./controller/videoartesano.controller";
-import { VideoArtesanosService } from "./service/videoartesano.service";
-import { FacturasService } from "./service/factura.service";
-import { FacturaController } from "./controller/factura.controller";
-import { DetalleFacturasController } from "./controller/detallefactura.controller";
-import { DetalleFacturasService } from "./service/detallefactura.service";
-import { ProductosService } from "./service/producto.service";
+import { UsersService } from "./service/admin/user.service";
+import { UsersController } from "./controller/admin/user.controller";
+import { RolesService } from "./service/admin/role.service";
+import { RolesController } from "./controller/admin/role.controller";
+import { CategoriasController } from "./controller/admin/categoria.controller";
+import { CategoriasService } from "./service/admin/categoria.service";
+import { ProductosController } from "./controller/admin/product.controller";
+import { MetodoPagoController } from "./controller/admin/metodopago.controller";
+import { MetodoPagoService } from "./service/admin/metodopago.service";
+import { CredencialesController } from "./controller/admin/credenciales.controller";
+import { CredencialesService } from "./service/admin/credenciales.service";
+import { IngresoLogController } from "./controller/admin/ingresoslog.controller";
+import { IngresosLogService } from "./service/admin/ingresoslog.service";
+import { VideoArtesanoController } from "./controller/admin/videoartesano.controller";
+import { VideoArtesanosService } from "./service/admin/videoartesano.service";
+import { FacturasService } from "./service/admin/factura.service";
+import { FacturaController } from "./controller/admin/factura.controller";
+import { DetalleFacturasController } from "./controller/admin/detallefactura.controller";
+import { DetalleFacturasService } from "./service/admin/detallefactura.service";
+import { ProductosService } from "./service/admin/producto.service";
+import { CarritoCompras } from "./entities/carritocompras.entity";
+import { CarritoComprasController } from "./controller/app/carritocompra.controller";
+import { CarritoComprasService } from "./service/app/carritocompras.service";
+import { LoginController } from "./controller/app/login.controller";
+import { LoginService } from "./service/app/credenciales.service";
+import { RegisterService } from "./service/app/register-user.service";
+import { RegisterController } from "./controller/app/register-user.controller";
+import { ProductoUsuarioController } from "./controller/app/productosapp.controller";
+import { ProductoUsuarioService } from "./service/app/obtenerproductos.service";
+import { DatosArtesanoService } from "./service/app/datosartesano.service";
+import { DatosArtesanosController } from "./controller/app/datosartesano.controller";
+import { ProcesoCompraController } from "./controller/app/procesocompras.controller";
 
 
 @Module({
@@ -46,7 +58,7 @@ import { ProductosService } from "./service/producto.service";
       UserEntity, Role, Categoria,
       Credenciales, DetalleFactura, Factura,
       IngresoLog, MetodoPagoCompra, Producto,
-      VideoArtesano,
+      VideoArtesano,CarritoCompras
     ])
 
   ],
@@ -55,14 +67,17 @@ import { ProductosService } from "./service/producto.service";
     UsersController, RolesController, CategoriasController,
     ProductosController, MetodoPagoController, CredencialesController,
     IngresoLogController, VideoArtesanoController, FacturaController,
-    DetalleFacturasController
+    DetalleFacturasController,CarritoComprasController, LoginController,
+    RegisterController, ProductoUsuarioController, DatosArtesanosController,
+    ProcesoCompraController
   ],
   
   providers: [
     UsersService, RolesService, CategoriasService,
     MetodoPagoService, CredencialesService, IngresosLogService,
     VideoArtesanosService, ProductosService, FacturasService,
-    DetalleFacturasService
+    DetalleFacturasService, CarritoComprasService, LoginService,
+    RegisterService, ProductoUsuarioService, DatosArtesanoService
   ],
 
 })
