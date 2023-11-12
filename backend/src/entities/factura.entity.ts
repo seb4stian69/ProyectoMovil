@@ -18,6 +18,9 @@ export class Factura {
   @Column({ type: 'date', name: 'fecha' })
   fecha: Date;
 
+  @Column({ type: 'enum', enum: ['EnProceso', 'Cancelado', 'Entregado'] })
+  tipo: string;
+
   @Column({ type: 'varchar', length: 100, name: 'MetodoPagoCompra__id' })
   metodoPagoCompraId: string;
 
