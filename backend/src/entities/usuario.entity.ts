@@ -8,6 +8,7 @@ import { VideoArtesano } from './video-artesano.entity';
 import { IngresoLog } from './ingreso-log.entity';
 import { Credenciales } from './credenciales.entity';
 import { CarritoCompras } from './carritocompras.entity';
+import { Producto } from './producto.entity';
 
 @Entity('Usuarios')
 export class UserEntity {
@@ -62,6 +63,11 @@ export class UserEntity {
 
   @OneToOne(() => IngresoLog, (ingresoLog) => ingresoLog.usuario)
   ingresosLogs: IngresoLog;
+
+  /* ---------------------------------------- Relacion con 'producto' ---------------------------------------- */
+
+  @OneToOne(() => Producto, (producto) => producto.usuario)
+  producto: Producto;
 
   /* ---------------------------------------- Relacion con 'credenciales' ---------------------------------------- */
 
