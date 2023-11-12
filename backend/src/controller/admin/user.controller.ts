@@ -29,7 +29,6 @@ export class UsersController {
   @ApiOperation({ summary: 'Crea un nuevo usuario' })
   @ApiResponse({ status: 201, description: 'Usuario creado con éxito' })
   create(@Body() user: UserEntity): Promise<UserEntity> {
-    user._id = generarID();
     return this.usersService.create(user);
   }
 
