@@ -10,12 +10,12 @@ export class DatosArtesanosController {
     private readonly datosArtesanosService: DatosArtesanoService,
   ) {}
 
-  @Get("/videos/:id")
+  @Get("/productos/:id")
   async obtenerProductos(@Param("id") id:string): Promise<ObtenerProductos> {
     return await this.datosArtesanosService.obtenerProductos(id);
   }
 
-  @Get("/productos/:id")
+  @Get("/video/:id")
   async obtenerVideos(@Param("id") id:string): Promise<ObtenerVideos> {
     return await this.datosArtesanosService.obtenerVideos(id);
   }
