@@ -19,7 +19,7 @@ export class Factura {
   fecha: Date;
 
   @Column({ type: 'enum', enum: ['EnProceso', 'Cancelado', 'Entregado'] })
-  tipo: string;
+  estado: string;
 
   @Column({ type: 'varchar', length: 100, name: 'MetodoPagoCompra__id' })
   metodoPagoCompraId: string;
