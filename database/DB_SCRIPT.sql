@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `Artesanias`.`Usuarios` (
 -- Table `Artesanias`.`Roles`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Artesanias`.`Roles` (
-  `_id` VARCHAR(100) NULL,
+  `_id` VARCHAR(100) NOT NULL,
   `tipo` ENUM('Cliente', 'Artesano', 'Admin') NOT NULL,
   `Usuarios__id` VARCHAR(15) CHARACTER SET 'big5' NOT NULL,
   `Usuarios_tipo_id` ENUM('CC', 'CE', 'TI', 'PAS') NOT NULL,
