@@ -69,6 +69,7 @@ CREATE TABLE IF NOT EXISTS `Artesanias`.`Productos` (
   `nombre` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(100) NOT NULL,
   `stock` INT NOT NULL,
+  `stockOriginal` INT NOT NULL,
   `valor_compra` FLOAT NOT NULL,
   `valor_venta` FLOAT NOT NULL,
   `imagen` VARCHAR(45) NOT NULL,
