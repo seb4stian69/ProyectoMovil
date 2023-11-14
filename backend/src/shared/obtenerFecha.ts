@@ -2,8 +2,8 @@ export function obtenerFechaActual(): string {
     const fecha = new Date();
 
     const dia = agregarCeroAntes(fecha.getDate());
-    const mes = agregarCeroAntes(fecha.getMonth() + 1); // Los meses comienzan desde 0
-    const anio = fecha.getFullYear();
+    const mes = agregarCeroAntes(fecha.getMonth() + 1); // Sumar 1 al mes
+    const anio = fecha.getFullYear().toString(); // Convertir el año a cadena
 
     return `${dia}/${mes}/${anio}`;
 }

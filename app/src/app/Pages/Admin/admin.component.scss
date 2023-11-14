@@ -1,0 +1,54 @@
+
+#app-admin {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+div div{
+    background-color: #59a1d1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Incluye padding y borde dentro del ancho */
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+  
+#app-admin div{
+    padding: 1.8em 1.8em;
+}
+
+/* Estilo base del select */
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin: 2em 2em;
+}
+
+/* Estilo al pasar el ratón sobre el select */
+select:hover {
+  border-color: #aaa;
+}
+
+/* Estilo cuando está enfocado */
+select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Estilo de las opciones */
+select option {
+  padding: 8px;
+}
+
+/* Estilo de las opciones al pasar el ratón sobre ellas */
+select option:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+  

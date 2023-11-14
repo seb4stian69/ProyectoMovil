@@ -1,0 +1,19 @@
+
+<select [(ngModel)]="selectedOption" (change)="onOptionChange($event)">
+    <option value="Categorias">Categorias</option>
+    <option value="Credenciales">Credenciales</option>
+    <option value="Detalle Factura">Detalle Factura</option>
+    <option value="Facturas">Facturas</option>
+    <option value="Ingresos logs">Ingresos logs</option>
+    <option value="Metodo Pago">Metodo Pago</option>
+    <option value="Productos">Productos</option>
+    <option value="Roles">Roles</option>
+    <option value="Usuarios">Usuarios</option>
+    <option value="Videos artesanos">Videos artesanos</option>
+</select>
+
+<br>
+
+<div id="app-admin" >
+    <div *ngFor="let table of tables" [innerHtml]="table"></div>
+</div>
